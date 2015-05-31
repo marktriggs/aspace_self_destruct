@@ -45,6 +45,8 @@ echo 'show tables' | mysql -u${user} -p${pass} --host=${host} ${db} --port=3306 
 
 scripts/setup-database.sh
 
+rm -rf data/*
+
 ./archivesspace.sh start
 
 rm -f self_destruct_time
