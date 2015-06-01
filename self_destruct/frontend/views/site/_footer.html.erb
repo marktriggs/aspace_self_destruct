@@ -7,7 +7,7 @@
 <% if user_can?('manage_repository') %>
    <div class="row">
        <%= form_tag("/self_destruct", method: "post") do %>
-           <button class="btn btn-danger pull-right"><i class="glyphicon glyphicon-fire">Self destruct!</i></button>
+           <button class="btn btn-danger pull-right"><i class="glyphicon glyphicon-fire"></i> Self destruct!</button>
        <% end %>
    </div>
 <% end %>
