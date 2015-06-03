@@ -33,7 +33,7 @@ echo "Dropping all tables..."
 while [ $table_count -ge 0 ]; do
 
     echo 'show tables' | mysql -u${user} -p${pass} --host=${host} ${db} --port=3306 | sed -ne '2,$p' | while read table; do
-      echo "delete from ${db}.${table}; drop table ${db}.${table};" | mysql -u${user} -p${pass} --host=${host} ${db} --port=3306 &>/dev/null
+      echo "SET FOREIGN_KEY_CHECKS = 0; delete from ${db}.${table}; drop table ${db}.${table};" | mysql -u${user} -p${pass} --host=${host} ${db} --port=3306 &>/dev/null
     done
 
     table_count=$[table_count - 1]
